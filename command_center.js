@@ -31,7 +31,7 @@ cylon.robot({
     var deg = that.temp.value();
     console.log("current temp:", deg);
     if (deg >= 30) {
-      that.writeMessage("Fire alarm!", "red");
+      that.writeMessage("Too hot!", "red");
       that.buzzer.digitalWrite(1);
       setTimeout(function() {
         that.buzzer.digitalWrite(0);
@@ -45,27 +45,27 @@ cylon.robot({
     if (val >= 450) {
       console.log("Sound detected:", val)
       that.writeMessage("Sound detected", "blue");
-      that.led.turnOn();
+      // that.led.turnOn();
       setTimeout(function() {
         that.reset();
       }, 500);
     }
   },
-  detectLight: function(val) {
-    var that = this;
-    var date = new Date();
-    var currentHour = date.getHours();
-    console.log("Light detected:", val)
-
-    if (val >= 450) {
-      console.log("Light detected:", val)
-      that.writeMessage("Light detected", "blue");
-      that.led.turnOn();
-      setTimeout(function() {
-        that.reset();
-      }, 500);
-    }
-  },
+  // detectLight: function(val) {
+  //   var that = this;
+  //   var date = new Date();
+  //   var currentHour = date.getHours();
+  //   console.log("Light detected:", val)
+  //
+  //   if (val >= 450) {
+  //     console.log("Light detected:", val)
+  //     that.writeMessage("Light detected", "blue");
+  //     that.led.turnOn();
+  //     setTimeout(function() {
+  //       that.reset();
+  //     }, 500);
+  //   }
+  // },
 //  turnLock: function(val) {
 //    var that = this;
 //    var currentAngle = that.servo.currentAngle();
@@ -134,16 +134,16 @@ cylon.robot({
       that.detectSound(val);
     });
 
-    that.light.on('analogRead', function(val) {
-      that.detectLight(val);
-    });
+    // that.light.on('analogRead', function(val) {
+    //   that.detectLight(val);
+    // });
 
 //    that.touch.on('push', function() {
 //      that.doorbell();
 //    });
 //
-    // setInterval(function() {
-    //   that.detectTemp();
-    // }, 1000);
+    setInterval(function() {
+      that.detectTemp();
+    }, 1000);
   }
 }).start();
