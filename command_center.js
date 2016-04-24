@@ -29,10 +29,10 @@ cylon.robot({
   detectTemp: function() {
     var that = this;
     var deg = that.temp.value();
-    console.log('temp', deg)
+    // console.log('temp', deg)
     if (deg >= 12) {
       that.writeMessage("Too hot!", "red");
-      that.buzzer.digitalWrite(1);
+      // that.buzzer.digitalWrite(1);
       setTimeout(function() {
         that.reset(0);
       }, 200);
@@ -42,11 +42,10 @@ cylon.robot({
     var that = this;
     // console.log("Sound detected:", val)
 
-    if (val >= 420) {
-      console.log("Sound detected:", val)
+    if (val >= 430) {
+      // console.log("Sound detected:", val)
       that.writeMessage("Sound detected", "blue");
-      // that.led.turnOn();
-      that.buzzer.digitalWrite(1);
+      // that.buzzer.digitalWrite(1);
       setTimeout(function() {
         that.buzzer.digitalWrite(0);
       }, 200);
