@@ -40,7 +40,7 @@ cylon.robot({
   },
   detectSound: function(val) {
     var that = this;
-    console.log("Sound detected:", val)
+    // console.log("Sound detected:", val)
 
     if (val >= 450) {
       console.log("Sound detected:", val)
@@ -134,16 +134,16 @@ cylon.robot({
       that.detectSound(val);
     });
 
-    that.light.on('analogRead', function(val) {
-      that.detectLight(val);
-    });
+    // that.light.on('analogRead', function(val) {
+    //   that.detectLight(val);
+    // });
 
 //    that.touch.on('push', function() {
 //      that.doorbell();
 //    });
 //
-    setInterval(function() {
-      that.detectTemp();
-    }, 1000);
+    // setInterval(function() {
+    //   that.detectTemp();
+    // }, 1000);
   }
 }).start();
