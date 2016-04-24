@@ -1,11 +1,11 @@
 var cylon = require("cylon");
- 
-cylon.api({
-  host: "0.0.0.0",
-  port: "3000",
-  ssl: false
-});
- 
+
+// cylon.api({
+//   host: "0.0.0.0",
+//   port: "3000",
+//   ssl: false
+// });
+//
 cylon.robot({
   name: "doorbot",
   connections: {
@@ -121,7 +121,7 @@ cylon.robot({
 //      that.led.turnOn();
 //      that.writeMessage("Lights On", "blue");
 //    });
-// 
+//
 //    that.button.on('release', function() {
 //      that.reset();
 //    });
@@ -129,7 +129,7 @@ cylon.robot({
 //    that.dial.on('analogRead', function(val) {
 //      that.turnLock(val);
 //    });
- 
+
     that.sound.on('analogRead', function(val) {
       that.detectSound(val);
     });
@@ -137,11 +137,11 @@ cylon.robot({
     that.light.on('analogRead', function(val) {
       that.detectLight(val);
     });
- 
+
 //    that.touch.on('push', function() {
 //      that.doorbell();
 //    });
-// 
+//
     setInterval(function() {
       that.detectTemp();
     }, 1000);
