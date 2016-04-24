@@ -57,7 +57,7 @@ cylon.robot({
     var currentHour = date.getHours();
     console.log("Light detected:", val)
 
-    if (currentHour > 19 && currentHour < 8 && val >= 450) {
+    if (val >= 450) {
       console.log("Light detected:", val)
       that.writeMessage("Light detected", "blue");
       that.led.turnOn();
@@ -134,9 +134,9 @@ cylon.robot({
       that.detectSound(val);
     });
 
-    // that.light.on('analogRead', function(val) {
-    //   that.detectLight(val);
-    // });
+    that.light.on('analogRead', function(val) {
+      that.detectLight(val);
+    });
 
 //    that.touch.on('push', function() {
 //      that.doorbell();
