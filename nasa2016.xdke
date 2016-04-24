@@ -1,0 +1,44 @@
+{
+  "project": {
+    "projectSettingsVersion": "2.0.0",
+    "initialAutoPluginCount": 0,
+    "currentBuildConfiguration": "Android",
+    "projectFiles": {},
+    "projectDirectories": {}
+  },
+  "iot-tab": {
+    "fileStatus": {
+      "command_center.js": {
+        "previousModTime": 1461519255000,
+        "modified": 1461519255000,
+        "seen": true,
+        "name": "command_center.js"
+      },
+      "nasa2016.xdk": {
+        "previousModTime": 1461516103000,
+        "modified": 1461516103000,
+        "seen": true,
+        "name": "nasa2016.xdk"
+      },
+      "nasa2016.xdke": {
+        "previousModTime": 1461519385000,
+        "modified": 1461519385000,
+        "seen": true,
+        "name": "nasa2016.xdke"
+      },
+      "package.json": {
+        "previousModTime": 1461518919000,
+        "modified": 1461518919000,
+        "seen": true,
+        "name": "package.json"
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1461516103000,
+        "modified": 1461516103000,
+        "seen": true,
+        "name": "xdk/project-info.json"
+      }
+    },
+    "boardFileStatus": {}
+  }
+}
