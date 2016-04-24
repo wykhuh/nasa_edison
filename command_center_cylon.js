@@ -1,5 +1,9 @@
 // Azure IoT packages
 var Protocol = require('azure-iot-device-amqp').Amqp;
+// Uncomment one of these transports and then change it in fromConnectionString to test other transports
+// var Protocol = require('azure-iot-device-amqp-ws').AmqpWs;
+// var Protocol = require('azure-iot-device-http').Http;
+// var Protocol = require('azure-iot-device-mqtt').Mqtt;
 var Client = require('azure-iot-device').Client;
 var Message = require('azure-iot-device').Message;
 var ConnectionString = require('azure-iot-device').ConnectionString;
@@ -178,23 +182,23 @@ cylon.robot({
         console.error('Could not connect: ' + err.message);
       } else {
         console.log('Client connected');
-        client.on('message', function (msg) {
-          console.log('Id: ' + msg.messageId + ' Body: ' + msg.data);
-          try {
-            var command = msg.data;
-            switch (command.Name) {
-              default:
-                console.error('Unknown command received');
-                break;
-            }
-
-            client.complete(msg, printResultFor('complete'));
-          }
-          catch (err) {
-            printResultFor('parse received message')(err);
-            client.reject(msg, printResultFor('reject'));
-          }
-        });
+        // client.on('message', function (msg) {
+        //   console.log('Id: ' + msg.messageId + ' Body: ' + msg.data);
+        //   try {
+        //     var command = msg.data;
+        //     switch (command.Name) {
+        //       default:
+        //         console.error('Unknown command received');
+        //         break;
+        //     }
+        //
+        //     client.complete(msg, printResultFor('complete'));
+        //   }
+        //   catch (err) {
+        //     printResultFor('parse received message')(err);
+        //     client.reject(msg, printResultFor('reject'));
+        //   }
+        // });
 
         // Create a message and send it to the IoT Hub every second
         var sendInterval = setInterval(function () {
@@ -220,6 +224,7 @@ cylon.robot({
         });
       }
     };
+
     client.open(connectCallback);
   }
 }).start();
