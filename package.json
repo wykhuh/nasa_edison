@@ -11,8 +11,8 @@
     "azure-iot-device-http": "1.0.2",
     "azure-iot-device-mqtt": "1.0.2",
     "edison-io": "^0.9.4",
-    "cylon-intel-iot": "*"
-
+    "cylon-intel-iot": "*",
+    "johnny-five": "^0.9.33"
   },
   "devDependencies": {
     "jshint": "^2.8.0"
